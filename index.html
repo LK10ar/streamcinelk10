@@ -1,0 +1,292 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page film</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(https://m.media-amazon.com/images/S/pv-target-images/c9764fb3d2f388849f064b75f851bb71428312f45a493a2036cf09731608f472.jpg);
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1, p {
+            color: white;
+        }
+
+        a, button {
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: #fff700;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 28px;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+        }
+
+        a:hover, button:hover {
+            background-color: #e6d700;
+        }
+
+        #buttons-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        img {
+            margin-top: 30px;
+            width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            margin-top: 30px;
+            color: white;
+        }
+
+        #content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        #film-frame {
+            width: 560px;
+            height: 315px;
+        }
+
+        #weather {
+            text-align: center;
+            margin-top: 0;
+            background-color: #fff700;
+            color: #000000;
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            font-size: 18px;
+            width: 300px;
+        }
+
+        p {
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+
+        #weather p {
+            color: #000000;
+        }
+
+        #logo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 100px;
+            height: auto;
+        }
+
+        #vpn-free {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #fff700;
+            color: black;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        #vpn-free:hover {
+            background-color: #e6d700;
+        }
+
+        #trailer-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #trailer-container {
+            background: #fff700;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #close-trailer {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: darkred;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #close-trailer:hover {
+            background: darkred;
+        }
+
+        #reopen-popup {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: darkred;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        #reopen-popup:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-size: cover;
+                background-image: url(https://cdn.discordapp.com/attachments/1037824336930803712/1346804502141079552/terrifier_3.jpg?ex=67c984ef&is=67c8336f&hm=998decdd8aa61071176875ca98aeb8789983129556a1a86731cfbe5d08d28f7b&);
+                padding: 10px;
+            }
+
+            #content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #film-frame, #weather {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            a, button {
+                font-size: 20px;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex;justify-content: end;width: 100%;">
+        <a id="vpn-button" href="https://chromewebstore.google.com/detail/urban-vpn-proxy/eppiocemhmnlbhjplcgkofciiegomcon" target="_blank">VPN free</a>
+    </div>
+    <div id="trailer-popup" style="display: none;">
+        <div id="trailer-container">
+            <iframe id="video-frame" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <br>
+            <button id="close-trailer">Fermer</button>
+        </div>
+    </div>
+
+    <h1>Découvrez le film ужасающий 3</h1>
+
+    <div id="content">
+        <div> <div id="buttons-container">
+            <button id="button1">film 1</button>
+            <button id="button2">film 2</button>
+            <a href="https://discord.gg/79vmBkJnVA" target="_blank">CINÉ LK10</a>
+        </div>
+            <iframe id="film-frame" src="https://nuum.ru/embed/videos/4352953-uzhasy-uzhasaiushchii-3-2024" scrolling="no" frameborder="0" allowfullscreen></iframe></div>
+  <div id="weather">
+            <h2>Météo Actuelle</h2>
+            <p id="location">Chargement de la météo...</p>
+            <p id="temperature"></p>
+            <p id="description"></p>
+        </div>
+    </div>
+
+    <!-- Bouton pour réouvrir popup bande-annonce je veux dead -->
+    <button id="reopen-popup">Voir la bande-annonce</button>
+
+    <footer>&copy; by LK10</footer>
+
+    <img src="img\ciné-lk10-logo-sans-fond.png" alt="Logo" id="logo">
+
+    <script>
+        const apiKey = '0b3abd4df33a41c1894110450250403';
+
+        function getWeather(lat, lon) {
+            const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${lat},${lon}&lang=fr`;
+
+            console.log("URL utilisée :", url);
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Erreur HTTP: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log("Réponse API :", data);
+                    if (data.error) {
+                        document.getElementById('location').innerText = "Erreur API: " + data.error.message;
+                        return;
+                    }
+                    document.getElementById('location').innerText = `Ville: ${data.location.name}, ${data.location.country}`;
+                    document.getElementById('temperature').innerText = `Température: ${data.current.temp_c}°C`;
+                    document.getElementById('description').innerText = `Conditions: ${data.current.condition.text}`;
+                })
+                .catch(error => {
+                    console.error('Erreur:', error);
+                    document.getElementById('location').innerText = 'Impossible de récupérer la météo.';
+                });
+        }
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+                    getWeather(lat, lon);
+                },
+                () => {
+                    document.getElementById('location').innerText = 'Géolocalisation refusée.';
+                }
+            );
+        } else {
+            document.getElementById('location').innerText = 'La géolocalisation n\'est pas supportée.';
+        }
+
+        // Fermer le popup  bande-annonce ////
+        document.getElementById('close-trailer').addEventListener('click', function() {
+            document.getElementById('trailer-popup').style.display = 'none';
+        });
+
+        // Réouvrir le popup  bande-annonce ////
+        document.getElementById('reopen-popup').addEventListener('click', function() {
+            document.getElementById('trailer-popup').style.display = 'flex';
+            document.getElementById('video-frame').src = "https://www.youtube.com/embed/zaPcin5knJk?si=p5uh-pcJ9hsaY3GC";
+        });
+
+        // Ouvrir film 1 ////
+        document.getElementById('button1').addEventListener('click', function() {
+            document.getElementById('trailer-popup').style.display = 'flex';
+            document.getElementById('video-frame').src = "https://uqload.net/embed-g1wxo0vxms43.html"; 
+        });
+
+        // Ouvrir film 2 ////
+        document.getElementById('button2').addEventListener('click', function() {
+            document.getElementById('trailer-popup').style.display = 'flex';
+            document.getElementById('video-frame').src = "https://uqload.net/embed-lnz45wh8c3uw.html"; 
+        });
+    </script>
+</body>
+</html>
