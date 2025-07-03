@@ -203,7 +203,8 @@
             <button id="button2">film 2</button>
             <a href="https://discord.gg/79vmBkJnVA" target="_blank">CINÉ LK10</a>
         </div>
-            <iframe id="film-frame" src="https://amg01796-amg01796c6-rakuten-fr-5334.playouts.now.amagi.tv/playlist/amg01796-fastmediafast-beybladefr-rakutenfr/playlist.m3u8" scrolling="no" frameborder="0" allowfullscreen></iframe></div>
+            <video id="film-player" width="560" height="315" controls></video>
+
   <div id="weather">
             <h2>Météo Actuelle</h2>
             <p id="location">Chargement de la météo...</p>
@@ -288,5 +289,23 @@
             document.getElementById('video-frame').src = "https://uqload.net/embed-lnz45wh8c3uw.html"; 
         });
     </script>
+        <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script>
+    const video = document.getElementById('film-player');
+    const streamURL = "https://amg01796-amg01796c6-rakuten-fr-5334.playouts.now.amagi.tv/playlist/amg01796-fastmediafast-beybladefr-rakutenfr/playlist.m3u8";
+
+    if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(streamURL);
+        hls.attachMedia(video);
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        // Pour Safari (qui supporte nativement HLS)
+        video.src = streamURL;
+    } else {
+        console.error("Votre navigateur ne supporte pas le streaming HLS.");
+        video.outerHTML = "<p style='color: white;'>Ce navigateur ne supporte pas la lecture du flux vidéo.</p>";
+    }
+</script>
+
 </body>
 </html>
