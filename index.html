@@ -189,7 +189,7 @@
     </div>
     <div id="trailer-popup" style="display: none;">
         <div id="trailer-container">
-            <iframe id="video-frame" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <video id="film-player" width="560" height="315" controls style="border-radius: 20px; box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1); margin-top: 30px;"></video>
             <br>
             <button id="close-trailer">Fermer</button>
         </div>
@@ -299,13 +299,11 @@
         hls.loadSource(streamURL);
         hls.attachMedia(video);
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        // Pour Safari (qui supporte nativement HLS)
         video.src = streamURL;
     } else {
-        console.error("Votre navigateur ne supporte pas le streaming HLS.");
-        video.outerHTML = "<p style='color: white;'>Ce navigateur ne supporte pas la lecture du flux vidéo.</p>";
+        console.error("Votre navigateur ne supporte pas la lecture du flux HLS.");
+        video.outerHTML = "<p style='color: white;'>Votre navigateur ne peut pas lire cette vidéo.</p>";
     }
 </script>
-
 </body>
 </html>
